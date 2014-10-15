@@ -12,13 +12,13 @@ import java.util.List;
  * @version 1.0
  * @param <T> der Typ der Teile
  */
-public class Spielzeuglieferung<T extends PlayableToy> {
+public class ToyDelivery<T extends PlayableToy> {
 	private List<T> lieferung;
 
 	/**
 	 * Erstaellt eine neue Spielzeuglieferung
 	 */
-	public Spielzeuglieferung() {
+	public ToyDelivery() {
 		this.lieferung = new ArrayList<T>();
 	}
 

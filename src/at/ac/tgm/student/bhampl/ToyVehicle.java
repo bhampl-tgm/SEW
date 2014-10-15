@@ -13,7 +13,7 @@ package at.ac.tgm.student.bhampl;
 public abstract class ToyVehicle implements PlayableToy {
 
 	private int weels;
-
+	
 	/**
 	 * 
 	 * @param weels

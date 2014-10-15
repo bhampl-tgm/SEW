@@ -8,20 +8,13 @@ package at.ac.tgm.student.bhampl;
  * @version 1.0
  */
 public interface PlayableToy {
+
 	/**
 	 * Gibt den Typ zurueck
 	 * 
 	 * @return der Typ
 	 */
 	public String getType();
-
-	/**
-	 * Setzt den Typ
-	 * 
-	 * @param type
-	 *            der Typ
-	 */
-	public void setType(String type);
 
 	/**
 	 * Gibt den Namen zurueck
