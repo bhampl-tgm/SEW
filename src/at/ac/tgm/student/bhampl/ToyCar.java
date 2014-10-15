@@ -20,8 +20,8 @@ public class ToyCar extends ToyVehicle {
 	private String color;
 
 	/**
-	 * Erstellt ein neues Spielzeugauto mit der Anzahl von Raedern und einem
-	 * Namen
+	 * Erstellt ein neues Spielzeugauto mit der Anzahl von Name, Raedern,
+	 * Sitzanzahl, Linksfahrer und einer Farbe
 	 * 
 	 * @param weels
 	 *            die Anzahl der Raeder
@@ -35,7 +35,9 @@ public class ToyCar extends ToyVehicle {
 	 *            die Farbe
 	 */
 	public ToyCar(String name, int weels, int seats, boolean left, String color) {
+		// dies hier ueberladet den Default Konstruktor
 		super(weels);
+		// ruft den passenden geerbten Konstruktor auf
 		this.type = "ToyCar";
 		this.setName(name);
 		this.setWeels(weels);
@@ -46,10 +48,11 @@ public class ToyCar extends ToyVehicle {
 
 	/**
 	 * Erstellt ein neues Spielzeugauto mit dem Namen ToyCar, 4 Raedern, 5
-	 * Sitzen, fahrer Sitzt links und der Farbe rot;
+	 * Sitzen, Fahrer sitzt links und der Farbe rot;
 	 */
 	public ToyCar() {
 		this("ToyCar", 4, 5, true, "red");
+		// ruft den passenden Konstruktor auf, der sich in der Klasse befindet
 	}
 
 	@Override

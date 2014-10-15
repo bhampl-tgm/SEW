@@ -13,7 +13,7 @@ package at.ac.tgm.student.bhampl;
 public abstract class ToyVehicle implements PlayableToy {
 
 	private int weels;
-	
+
 	/**
 	 * 
 	 * @param weels
@@ -21,7 +21,7 @@ public abstract class ToyVehicle implements PlayableToy {
 	 * 
 	 */
 	public ToyVehicle(int weels) {
-		this.weels = weels;
+		this.setWeels(weels);
 	}
 
 	/**
@@ -40,6 +40,6 @@ public abstract class ToyVehicle implements PlayableToy {
 	 *            die Anzahl der Raeder
 	 */
 	public void setWeels(int weels) {
-
+		this.weels = weels;
 	}
 }
