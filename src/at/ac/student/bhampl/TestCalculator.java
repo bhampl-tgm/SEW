@@ -1,9 +1,10 @@
 package at.ac.student.bhampl;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -31,11 +32,6 @@ public class TestCalculator {
 		this.calculator.addValue(5.5);
 	}
 
-	@Test
-	public void test() {
-		fail("Not yet implemented");
-	}
-
 	/**
 	 * Test fure {@link Calculator#toString()}
 	 */
@@ -43,16 +39,6 @@ public class TestCalculator {
 	public void test_toString() {
 		assertEquals("[-1.0,0.0,1.0,123.0,-123.0,-5.5,5.5]", this.calculator.toString());
 	}
-
-//	/**
-//	 * Test fure {@link Calculator#addValue(double)}
-//	 */
-//	@Test
-//	public void test_addValue() {
-//		this.calculator.addValue(-5);
-//		this.calculator.addValue(27.9);
-//		this.calculator.addValue(42);
-//	}
 
 	/**
 	 * Test fure {@link AdditionCalculator}
@@ -68,7 +54,7 @@ public class TestCalculator {
 		test.add((double) 123 + 42);
 		test.add((double) -123 + 42);
 		test.add((double) -5.5 + 42);
-		test.add((double) 5.5 + 5);
+		test.add((double) 5.5 + 42);
 		assertEquals(test, this.calculator.processCalculations());
 	}
 
@@ -91,6 +77,17 @@ public class TestCalculator {
 	}
 
 	/**
+	 * Test fure {@link DivisionCalculator}
+	 */
+	@Test(expected = IllegalArgumentException.class)
+	public void test_DivisionCalculatorZero() {
+		this.calculator.setCalculatable(new DivisionCalculator());
+		this.calculator.setModifiert(0);
+		this.calculator.processCalculations();
+		fail("No Exception!");
+	}
+
+	/**
 	 * Test fure {@link MultiplicationCalculator}
 	 */
 	@Test
@@ -104,7 +101,7 @@ public class TestCalculator {
 		test.add((double) 123 * 42);
 		test.add((double) -123 * 42);
 		test.add((double) -5.5 * 42);
-		test.add((double) 5.5 * 5);
+		test.add((double) 5.5 * 42);
 		assertEquals(test, this.calculator.processCalculations());
 	}
 
@@ -122,10 +119,10 @@ public class TestCalculator {
 		test.add((double) 123 - 42);
 		test.add((double) -123 - 42);
 		test.add((double) -5.5 - 42);
-		test.add((double) 5.5 - 5);
+		test.add((double) 5.5 - 42);
 		assertEquals(test, this.calculator.processCalculations());
 	}
-	
+
 	/**
 	 * Test fure {@link Calculator#removeValue(double)}
 	 */

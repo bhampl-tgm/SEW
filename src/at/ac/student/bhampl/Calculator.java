@@ -1,5 +1,6 @@
 package at.ac.student.bhampl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -7,7 +8,7 @@ import java.util.List;
  * implementieren die Liste von Elementen mit der Zahl modifier veraendert
  * 
  * @author Burkhard Hampl
- * @version 0.1
+ * @version 1.0
  * @see Calculatable
  */
 public class Calculator {
@@ -22,7 +23,8 @@ public class Calculator {
 	 * Initialisiert einen neuen Rechner
 	 */
 	public Calculator() {
-
+		this.values = new ArrayList<Double>();
+		values.equals(this);
 	}
 
 	/**
@@ -32,7 +34,7 @@ public class Calculator {
 	 *            die Zahl
 	 */
 	public void addValue(double value) {
-
+		this.values.add(value);
 	}
 
 	/**
@@ -42,7 +44,7 @@ public class Calculator {
 	 *            die Zahl
 	 */
 	public void setModifiert(double modifier) {
-
+		this.modifier = modifier;
 	}
 
 	/**
@@ -52,12 +54,19 @@ public class Calculator {
 	 *            das zu loeschende Element
 	 */
 	public void removeValue(double value) {
-
+		this.values.remove(value);
 	}
 
 	@Override
 	public String toString() {
-		return null;
+		StringBuilder s = new StringBuilder();
+		s.append("[");
+		for (double d : this.values) {
+			s.append(d + ",");
+		}
+		s.delete(s.length() - 1, s.length());
+		s.append("]");
+		return s.toString();
 	}
 
 	/**
@@ -68,7 +77,7 @@ public class Calculator {
 	 * @see Calculatable
 	 */
 	public List<Double> processCalculations() {
-		return null;
+		return this.calculatable.processCalculations(this.values, this.modifier);
 	}
 
 	/**
@@ -78,7 +87,7 @@ public class Calculator {
 	 *            die Methode
 	 */
 	public void setCalculatable(Calculatable calculatable) {
-
+		this.calculatable = calculatable;
 	}
 
 }
