@@ -60,4 +60,25 @@ public class Calculator {
 		return null;
 	}
 
+	/**
+	 * Fuehrt die Rechenoperation aus
+	 * 
+	 * @return eine {@link List} mit {@link Double}-Werten, die mit
+	 *         {@link Calculator#setModifiert(double)} vaendert wurden
+	 * @see Calculatable
+	 */
+	public List<Double> processCalculations() {
+		return null;
+	}
+
+	/**
+	 * Setzt die Methode des Rechnens
+	 * 
+	 * @param calculatable
+	 *            die Methode
+	 */
+	public void setCalculatable(Calculatable calculatable) {
+
+	}
+
 }
